@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="mainstylesheet.css">
+    <title>Prepara tu viaje por España !</title>
+</head>
+<body>
+    <nav>
+        <a href="#main_menu" class="show_menu"><img src="img/logo.png" alt="reduced_menu_logo" id="show_menu_img">Menú</a>
+        <div id="main_menu" class="main_menu">
+            <ul>
+                <li><a href="index.html" class="logo"><img alt="logo" src="img/logo.png" id="logo_img"></a></li>
+                <li><a href="bares.html" class="menu_cat"><br>Bares</a></li>
+                <li><a href="bebidas.html" class="menu_cat"><br>Bebidas</a></li>
+                <li><a href="turismo.html" class="menu_cat"><br>Turismo</a></li>
+                <li><a href="restaurantes.html" class="menu_cat"><br>Restaurantes</a></li>
+                <li><a href ="contacto.html" class="menu_cat"><br>Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <header>
+            <h1>Contacta con nosotros</h1>
+        </header>
+        <div class="main_article">
+            <p>¿Una duda? ¿Una categoría nueva que querrías ver en nuestra web? ¡No dudes en contactar con nosotros! Rellena el formulario y en breve te contestaremos.</p>
+            <p>Si prefieres contactar con nosotros por WhatsApp, escanea el código QR o haz click en el link</p>
+        </div>
+        <nav class="contact_type">
+            <a href="#contact_form">Formulario</a>
+            <a href="#whatsapp">WhatsApp</a>
+        </nav>
+
+        <form class=contact_form id="contact_form">
+            
+                <legend id="tu_info">Tu información</legend>
+                <label id="name_label" for="name_answer">Tu nombre</label>
+                <input type="text" name="name" id="name_answer" required><br>
+                <label id="phone_label" for="phone_answer">Tu teléfono</label>
+                <input type="tel" name="phone" id="phone_answer"><br>
+                <label id="email_label" for="email">Tu correo electrónico</label>
+                <input type="email" id="email_answer" name="email" required>
+            
+            <br>
+                
+                <legend id="tu_mensaje">Tu mensaje</legend>
+                <label id="tema_del_mensaje_label" for="tema_del_mensaje_answer">¿Por qué nos escribes?</label>
+                <select id="tema_del_mensaje_answer" type=menu required>
+                    <option value="">Elige una categoría</option>
+                    <option value="suggestion">Sugerencia</option>
+                    <option value="question">Pregunta</option>
+                    <option value="reclamation">Reclamación</option>
+                    <option value="other">Otra</option> 
+                </select>
+                <label id="message_label" for="message" required>Cuéntanos:</label><br>
+                <textarea name="message" id="message_answer" rows=10 required></textarea>
+                <input type="submit" value="Envíanos tu mensaje" id="submit_contact_form"/>
+        </form>
+        
+        <div class="whatsapp" id="whatsapp">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/qr_whatsapp.png" alt="QR_whatsapp" id="whatsapp_img"><a>    
+        </div>
+    
+    </main>
+    <div class="button top_of_page"><a href="#" ><img class="top_arrow" src="img/top-arrow-openmoji.png" alt="Go to top logo"></a></div>
+
+    <div class="pie_de_pagina">
+        <a href="https://google.es">Salir de aquí</a>
+        <a href="https://repositorio.comillas.edu/xmlui/bitstream/handle/11531/86088/Gu%c3%ada%20Docente.pdf?sequence=1">Avisos legales</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Reclamación</a>
+    </div>
+    
+</body>
+</html>
