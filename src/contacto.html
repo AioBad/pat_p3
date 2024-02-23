@@ -6,13 +6,12 @@
     <link rel="icon" href="img/logo.png" type="image/icon type">
     <link rel="stylesheet" href="mainstylesheet.css">
     <script src="include_constant_elements.js"></script>
+    <script async src="contacto.js"></script>
     <title>Prepara tu viaje por España !</title>
 </head>
 <body id="body">
     <main class="main">
-        <header>
-            <h1>Contacta con nosotros</h1>
-        </header>
+        <h1>Contacta con nosotros</h1>
         <div class="main_article">
             <p>¿Una duda? ¿Una categoría nueva que querrías ver en nuestra web? ¡No dudes en contactar con nosotros! Rellena el formulario y en breve te contestaremos.</p>
             <p>Si prefieres contactar con nosotros por WhatsApp, escanea el código QR o haz click en el link</p>
@@ -44,7 +43,7 @@
                     <option value="other">Otra</option> 
                 </select>
                 <label id="message_label" for="message" required>Cuéntanos:</label><br>
-                <textarea name="message" id="message_answer" rows=10 required></textarea>
+                <textarea name="message" id="message_answer" rows=10 maxlength="3000" required></textarea>
                 <input type="submit" value="Envíanos tu mensaje" id="submit_contact_form"/>
         </form>
         
