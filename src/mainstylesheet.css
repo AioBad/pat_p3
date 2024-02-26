@@ -396,17 +396,17 @@ h3 {
         aspect-ratio: 16/9;
 }
 
-.best_of_table {
+.best_of_table, .tabla_resultados{
     margin-top: 1em;
     border-collapse: collapse;
 }
 
-.best_of_table th {
+.best_of_table th, .tabla_resultados th {
     text-align: center;
     border: .15em solid lightblue;
 }
 
-.best_of_table td {
+.best_of_table td, .tabla_resultados td {
     border: .15em solid lightblue;
     padding:.5em;
     text-align: left;

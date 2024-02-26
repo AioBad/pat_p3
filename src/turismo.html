@@ -12,11 +12,140 @@
     <main class="main">
         <h1>Turismo</h1>
         <div class="main_article">
-            <p>Aquí vas a poder encontrar información turística sobre diferentes lugares del planeta. Solo te queda elegir a donde te quieras ir, ¡ y nos ocupamos del resto !</p>
-            
-        </div>
+            <p>Aquí vas a poder encontrar información sobre los eventos culturales del País Vasco.</p>
+            <label for="sel_idioma" value="">¿En qué idioma quieres los resultados?</label>
+            <select id="sel_idioma">
+                <option value="Es">Español</option>
+                <option value="Eu">Euskadi</option>
+            </select>
+            <br>
+            <label for="year" for="mes" for="dia" id="fecha_label">Fecha</label>
+            <select id="year">
+                <option value="">Año</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+            <select id="mes">
+                <option value="">Mes</option>
+                <option value="01">enero</option>
+                <option value="02">febrero</option>
+                <option value="03">marzo</option>
+                <option value="04">abril</option>
+                <option value="05">mayo</option>
+                <option value="06">junio</option>
+                <option value="07">julio</option>
+                <option value="08">agosto</option>
+                <option value="09">septiembre</option>
+                <option value="10">octubre</option>
+                <option value="11">noviembre</option>
+                <option value="12">diciembre</option>
+            </select>
+            <select id="dia">
+                <option value="">Día</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <br>
+            <label for="sel_provincia" for="sel_municipio" id="label_provincia">Provincia</label>
+            <select id='sel_provincia'>
+                <!--Contenido añadido con JS.-->
+            </select>
 
+            <select id='sel_municipio' hidden>
+                <!--Contenido añadido con JS.-->
+            </select>
+            <br>
+            <label for="sel_tipo" id='label_tipo'>Tipo de evento</label>
+            <select id='sel_tipo'>
+                <option value="">Tipo de eventos</option>
+                <!--Contenido añadido con JS.-->
+            </select>
+            <br>
+            <button id='buscar'>Buscar</button>
+            <br>
+            <select id='elementos_por_pag' hidden>
+                <option value="20">20/página</option>
+                <option value="30">30/página</option>
+                <option value="40">40/página</option>
+                <option value="50">50/página</option>
+                <option value="60">60/página</option>
+                <option value="80">80/página</option>
+                <option value="90">90/página</option>
+                <option value="100">100/página</option>
+                <option value="200">200/página</option>
+                <!--Contenido añadido con JS.-->
+            </select>
+            <select id='numero_pagina' hidden>
+                <!--Contenido añadido con JS.-->
+            </select>
+        </div>
+            
+            <div>
+            <table id="tabla_resultados" class=".tabla_resultados" hidden border="15em solid lightblue">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Descripción</th>
+                </thead>
+                <tbody id="cuerpo_resultados" >
+
+                </tbody>
+                <!--Añadidos con JS-->
+            </table>
+            <div class='navigate_pages' hidden>
+                <button id="prev_page">Página anterior</button>   
+                <button id="next_page">Página suiguiente</button>    
+            </div>
+
+        </div>
+            
+        
     </main>
     
 </body>
+<script src="api_turismo.js"></script>
 </html>
