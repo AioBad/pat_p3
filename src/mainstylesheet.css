@@ -396,7 +396,8 @@ h3 {
         aspect-ratio: 16/9;
 }
 
-.best_of_table, .tabla_resultados{
+.best_of_table, #tabla_resultados{
+    width:100%;
     margin-top: 1em;
     border-collapse: collapse;
 }
@@ -406,7 +407,7 @@ h3 {
     border: .15em solid lightblue;
 }
 
-.best_of_table td, .tabla_resultados td {
+.best_of_table td{
     border: .15em solid lightblue;
     padding:.5em;
     text-align: left;
@@ -420,4 +421,72 @@ h3 {
 
 .best_of_table thead tr th:first-child{
     border:none;
+}
+
+
+.descripcion {
+    padding-left: 2em;
+    padding-right:.15em;    
+}
+
+.tabla_resultados td {
+    border: .15em solid lightblue;
+}
+
+.fecha, .nombre_evento {
+    text-align: center;
+    padding: 0.15em;
+}
+
+.navigate_pages {
+    padding-top:1em;
+}
+
+
+.navigate_pages span {
+    grid-gap:0;
+    display:grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    margin-left:30%;
+    margin-right:30%;
+    grid-template-areas: 
+    "prev_page next_page";
+    
+}
+
+
+#prev_page {
+    grid-area: prev_page;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+}
+
+#next_page {
+    grid-area: next_page;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+
+#prev_page, #next_page {
+    border:none;
+    outline: 2px solid lightblue;
+}
+
+.navegar_boton, .elegir_opcion, #buscar{
+    font-size:1.3rem;
+    background-color: transparent;outline
+    background-repeat: no-repeat;
+}
+
+.elegir_opcion, #buscar {
+    border: 2px solid lightblue;
+    border-radius: .3em;
+    margin:.2em;
+    padding:.1em;
+}
+
+.opciones_pagina {
+    margin: 1em;
+    text-align:center;
 }

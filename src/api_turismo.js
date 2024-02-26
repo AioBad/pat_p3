@@ -17,6 +17,7 @@ let busqueda_desde_cero = 1;
 const prev_page = document.getElementById('prev_page');
 const next_page = document.getElementById('next_page');
 const navigate_pages = document.querySelector('.navigate_pages');
+let total_elementos=0;
 
 const url_base = 'https://api.euskadi.eus/culture/events/v1.0/';
 
@@ -86,7 +87,8 @@ const municipio = function(){
             return response.json();
         })
         .then(datos =>{
-            let tot_munic = datos["totalItems"]
+            let tot_munic = datos["totalItems"];
+            
             let opcion;
             fetch(url_base + 'municipalities/byProvince/' + sel_provincia.value + '?_elements=' + tot_munic)
             .then(response => {
@@ -164,26 +166,31 @@ const busqueda = function (){
     })
     .then(datos => {
         cuerpo_resultados.innerHTML='';
+        if (busqueda_desde_cero==1){total_pages = datos["totalPages"];}
         let linea;
         
         for (evento of datos["items"]) {
             linea = document.createElement('tr');
             let nombre = document.createElement('td');
             nombre.textContent = evento['name'+idioma];
+            nombre.className = "nombre_evento"
             linea.appendChild(nombre);
             let begin_date = document.createElement('td');
             begin_date.textContent=new Date(evento['startDate']).toLocaleDateString('es-ES');
+            begin_date.className="fecha";
             linea.appendChild(begin_date);
             let end_date = document.createElement('td');
+            end_date.className="fecha";
             end_date.textContent= new Date(evento['endDate']).toLocaleDateString('es-ES');
             linea.appendChild(end_date);
             let descripcion = document.createElement('td');
             descripcion.innerHTML=evento['description'+idioma];
+            descripcion.className="descripcion";
             linea.appendChild(descripcion);
             cuerpo_resultados.appendChild(linea);
         }
         if (busqueda_desde_cero==1){
-            
+            pagina.innerHTML='';
             for (let pag_nb=1;pag_nb <= datos["totalPages"];pag_nb++){
                 pagina_nb = document.createElement('option');
                 pagina_nb.value=pag_nb;
@@ -201,6 +208,12 @@ const busqueda = function (){
     })
 }
 
+elementos_por_pag.onchange = function () {
+    busqueda_desde_cero=1;
+    pagina.value=1;
+    busqueda();
+}
+
 boton_buscar.onclick = function (){
     busqueda_desde_cero=1;
     pagina.value=1;
@@ -214,15 +227,23 @@ pagina.onchange = function(){
 }
 
 next_page.onclick = function(){
-    pagina.value++;
-    busqueda_desde_cero=0;
-    busqueda();
+    if (pagina.value<total_pages){
+        pagina.value++;
+        busqueda_desde_cero=0;
+        busqueda();}
+    else {
+        alert("Estás ya en la última página.")
+    }
 }
 
 prev_page.onclick = function(){
-    pagina.value--;
-    busqueda_desde_cero=0;
-    busqueda();
+    if (pagina.value>1){
+        pagina.value--;
+        busqueda_desde_cero=0;
+        busqueda();}
+    else {
+        alert("Estás ya en la primera página.")
+    }
 }
 
 recargar_todo();
