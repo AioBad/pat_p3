@@ -17,7 +17,7 @@
             <p>Si prefieres contactar con nosotros por WhatsApp, escanea el código QR o haz click en el link</p>
         </div>
         <nav class="contact_type">
-            <a href="#contact_form">Formulario</a>
+            <a href="#contact_form" id="contact_form_button">Formulario</a>
             <a href="#whatsapp">WhatsApp</a>
         </nav>
 
@@ -28,7 +28,7 @@
                 <input type="text" name="name" id="name_answer" required><br>
                 <label id="phone_label" for="phone_answer">Tu teléfono</label>
                 <input type="tel" name="phone" id="phone_answer"><br>
-                <label id="email_label" for="email">Tu correo electrónico</label>
+                <label id="email_label" for="email_answer">Tu correo electrónico</label>
                 <input type="email" id="email_answer" name="email" required>
             
             <br>
@@ -37,12 +37,14 @@
                 <label id="tema_del_mensaje_label" for="tema_del_mensaje_answer">¿Por qué nos escribes?</label>
                 <select id="tema_del_mensaje_answer" type=menu required>
                     <option value="">Elige una categoría</option>
-                    <option value="suggestion">Sugerencia</option>
-                    <option value="question">Pregunta</option>
-                    <option value="reclamation">Reclamación</option>
-                    <option value="other">Otra</option> 
+                    <option value="1">Sugerencia</option>
+                    <option value="2">Pregunta</option>
+                    <option value="3">Reclamación</option>
+                    <option value="4">Otra</option> 
                 </select>
-                <label id="message_label" for="message" required>Cuéntanos:</label><br>
+                <label id="tema2_label" for="tema2" hidden>Precisa la razón</label>
+                <input id="tema2" type="text" name="tema2" hidden></input>
+                <label id="message_label" for="message_answer" required>Cuéntanos:</label><br>
                 <textarea name="message" id="message_answer" rows=10 maxlength="3000" required></textarea>
                 <input type="submit" value="Envíanos tu mensaje" id="submit_contact_form"/>
         </form>

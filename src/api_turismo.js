@@ -168,8 +168,14 @@ const busqueda = function (){
         cuerpo_resultados.innerHTML='';
         if (busqueda_desde_cero==1){total_pages = datos["totalPages"];}
         let linea;
-        
-        for (evento of datos["items"]) {
+        if (datos["totalItems"]==0){
+            tabla_resultados.hidden=true;
+            elementos_por_pag.hidden=true;
+            pagina.hidden=true;
+            navigate_pages.hidden=true;
+            setTimeout(() => alert("No hay resultados para esta búsqueda.",.5));
+        }
+        else {for (evento of datos["items"]) {
             linea = document.createElement('tr');
             let nombre = document.createElement('td');
             nombre.textContent = evento['name'+idioma];
@@ -202,6 +208,7 @@ const busqueda = function (){
         elementos_por_pag.hidden=false;
         pagina.hidden=false;
         navigate_pages.hidden=false;
+        sel_tipo.scrollIntoView();}
     })
     .catch(error=> {
         console.error("Ha habido un error: " + error)

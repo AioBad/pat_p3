@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding:0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -103,6 +104,7 @@ body {
     "message_legend message_legend"
     
     "tema_del_mensaje_label tema_del_mensaje_answer"
+    "tema2_label tema2"
     "message_label message_label"
     "message_answer message_answer"
     ". submit_contact_form"
@@ -164,6 +166,12 @@ body {
     text-align: center;
 }
 
+.contact_form input, .contact_form textarea, .contact_form select {
+    border-radius: 1em;
+    padding:.5em;
+    font-size:1rem;
+}
+
 #tu_info {
     grid-area: tu_info;
 }
@@ -217,8 +225,15 @@ body {
 }
 
 #submit_contact_form {
-    
     grid-area: submit_contact_form;
+}
+
+#tema2_label {
+    grid-area:tema2_label;
+}
+
+#tema2{
+    grid-area:tema2;
 }
 
 h1 {
@@ -475,7 +490,7 @@ h3 {
 
 .navegar_boton, .elegir_opcion, #buscar{
     font-size:1.3rem;
-    background-color: transparent;outline
+    background-color: transparent;
     background-repeat: no-repeat;
 }
 
